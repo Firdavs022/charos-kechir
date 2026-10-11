@@ -1,0 +1,147 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    background-color: #0d021a;
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    overflow-x: hidden;
+  }
+}
+
+.font-romantic {
+  font-family: 'Dancing Script', cursive;
+}
+
+.font-serif-romantic {
+  font-family: 'Playfair Display', serif;
+}
+
+/* Animated Dynamic Gradient Aura */
+.bg-glow {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background: 
+    radial-gradient(circle at 15% 25%, rgba(255, 20, 147, 0.22) 0%, transparent 45%),
+    radial-gradient(circle at 85% 75%, rgba(138, 43, 226, 0.25) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(255, 105, 180, 0.15) 0%, transparent 65%),
+    radial-gradient(circle at 75% 20%, rgba(236, 72, 153, 0.18) 0%, transparent 40%);
+  z-index: 0;
+  filter: blur(50px);
+  animation: pulseAura 12s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+@keyframes pulseAura {
+  0% { transform: scale(1) rotate(0deg); }
+  50% { transform: scale(1.08) rotate(3deg); }
+  100% { transform: scale(1.02) rotate(-3deg); }
+}
+
+/* Glassmorphism Styles */
+.glass-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.55), inset 0 0 20px rgba(255, 105, 180, 0.12);
+}
+
+.glass-card-interactive {
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), inset 0 0 15px rgba(255, 105, 180, 0.08);
+  transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.glass-card-interactive:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 105, 180, 0.45);
+  transform: translateY(-4px) scale(1.015);
+  box-shadow: 0 16px 40px rgba(255, 20, 147, 0.25), inset 0 0 25px rgba(255, 105, 180, 0.2);
+}
+
+.glass-btn {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.glass-btn:hover {
+  background: rgba(255, 105, 180, 0.28);
+  border-color: rgba(255, 105, 180, 0.6);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 105, 180, 0.35);
+}
+
+.glass-btn:active {
+  transform: translateY(1px) scale(0.98);
+}
+
+.text-glow {
+  text-shadow: 0 0 14px rgba(255, 105, 180, 0.85), 0 0 28px rgba(255, 20, 147, 0.55);
+}
+
+.text-glow-subtle {
+  text-shadow: 0 0 8px rgba(255, 105, 180, 0.5);
+}
+
+/* Audio Visualizer Equalizer Bar Animations */
+@keyframes eqBar1 { 0%, 100% { height: 4px; } 50% { height: 18px; } }
+@keyframes eqBar2 { 0%, 100% { height: 16px; } 50% { height: 6px; } }
+@keyframes eqBar3 { 0%, 100% { height: 8px; } 50% { height: 22px; } }
+@keyframes eqBar4 { 0%, 100% { height: 18px; } 50% { height: 10px; } }
+
+.eq-bar-1 { animation: eqBar1 0.8s ease-in-out infinite; }
+.eq-bar-2 { animation: eqBar2 0.7s ease-in-out infinite 0.1s; }
+.eq-bar-3 { animation: eqBar3 0.9s ease-in-out infinite 0.2s; }
+.eq-bar-4 { animation: eqBar4 0.75s ease-in-out infinite 0.15s; }
+
+/* Heart Pulse */
+@keyframes heartBeat {
+  0% { transform: scale(1); }
+  14% { transform: scale(1.18); }
+  28% { transform: scale(1); }
+  42% { transform: scale(1.18); }
+  70% { transform: scale(1); }
+}
+
+.heart-beat-anim {
+  animation: heartBeat 1.8s ease-in-out infinite;
+}
+
+/* Flee Button Shake */
+@keyframes btnShake {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  20% { transform: translate(-8px, 4px) rotate(-3deg); }
+  40% { transform: translate(8px, -4px) rotate(3deg); }
+  60% { transform: translate(-6px, -6px) rotate(-2deg); }
+  80% { transform: translate(6px, 6px) rotate(2deg); }
+}
+
+.shake-btn {
+  animation: btnShake 0.4s ease-in-out;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(13, 2, 26, 0.6);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 105, 180, 0.4);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 105, 180, 0.7);
+}
